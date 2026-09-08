@@ -405,10 +405,22 @@
     transition: transform .15s ease;
   }
   .route-pin:hover{ transform: translateX(-50%) translateY(-2px); }
-  .route-pin.start{ top: 6%; left: 50%; transform: translateX(-50%); }
+  .route-pin.start{
+    top: 6%; left: 50%; transform: translateX(-50%);
+    flex-direction:column; align-items:center; gap:3px;
+    border-radius:20px; padding: 10px 20px 12px;
+  }
   .route-pin.end{ bottom: 6%; left: 50%; transform: translateX(-50%); }
+  .route-pin-label{
+    font-size:0.6rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--accent-strong);
+  }
   @media (max-width: 560px){
     .route-pin{ font-size:0.7rem; padding:7px 12px; }
+    .route-pin.start{ padding: 8px 16px 10px; }
+    .route-pin-label{ font-size:0.56rem; }
   }
 
   /* ---------- Photo band ---------- */
@@ -770,7 +782,7 @@
         <span class="sub">Puntualidad de marea baja</span>
       </div>
       <div class="info-item">
-        <span class="mono-label">📍 Encuentro</span>
+        <span class="mono-label">📍 Punto de encuentro</span>
         <span class="value">La Primera Pista</span>
         <span class="sub">La Barrosa, Chiclana</span>
       </div>
@@ -793,7 +805,10 @@
         <circle cx="50" cy="8" r="1.6" fill="#fff" vector-effect="non-scaling-stroke"/>
         <circle cx="50" cy="94" r="1.6" fill="var(--accent)" vector-effect="non-scaling-stroke"/>
       </svg>
-      <a class="route-pin start" href="https://maps.app.goo.gl/dKvQUJYCkCMsvEQF7" target="_blank" rel="noopener">🚩 La Primera Pista</a>
+      <a class="route-pin start" href="https://maps.app.goo.gl/dKvQUJYCkCMsvEQF7" target="_blank" rel="noopener">
+        <span class="route-pin-label">Punto de encuentro</span>
+        <span>🚩 La Primera Pista</span>
+      </a>
       <a class="route-pin end" href="https://maps.app.goo.gl/7G2nQKKJ15B64mEL9" target="_blank" rel="noopener">Ohana Beach 🏁</a>
     </div>
   </section>
