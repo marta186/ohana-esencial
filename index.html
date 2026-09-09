@@ -370,6 +370,15 @@
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
+  .route-head p a.route-link{
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-strong);
+    text-underline-offset: 3px;
+    transition: color .15s ease;
+  }
+  .route-head p a.route-link:hover{ color: var(--accent-strong); }
   .route-map{
     position:relative;
     margin-top: 46px;
@@ -793,7 +802,7 @@
     <div class="wrap route-head">
       <p class="eyebrow" style="color:var(--accent-strong)">La ruta</p>
       <h2 class="route-title">Caminamos por la orilla, recogiendo a nuestro paso</h2>
-      <p>Saldremos desde <strong>La Primera Pista</strong> y avanzaremos por la orilla recogiendo los residuos que encontremos. Terminaremos la ruta en Ohana Beach, en Novo Sancti Petri, donde nos espera el arroz.</p>
+      <p>Saldremos desde <a class="route-link" href="https://maps.app.goo.gl/dKvQUJYCkCMsvEQF7" target="_blank" rel="noopener">La Primera Pista</a> y avanzaremos por la orilla recogiendo los residuos que encontremos. Terminaremos la ruta en <a class="route-link" href="https://maps.app.goo.gl/7G2nQKKJ15B64mEL9" target="_blank" rel="noopener">Ohana Beach</a>, en Novo Sancti Petri, donde nos espera el arroz.</p>
     </div>
     <div class="route-map">
       <img src="images/route-map.jpg" alt="Orilla tranquila de La Barrosa, olas suaves rompiendo sobre la arena">
