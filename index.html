@@ -459,9 +459,9 @@
   .route-map img{
     display:block;
     width:100%;
-    height: clamp(320px, 46vw, 560px);
+    height:auto;
+    aspect-ratio: 2200 / 1228;
     object-fit:cover;
-    object-position: center 55%;
   }
   .route-map svg{
     position:absolute;
@@ -484,14 +484,15 @@
     text-decoration:none;
     box-shadow: 0 10px 24px -10px rgba(15,30,34,0.5);
     transition: transform .15s ease;
+    transform: translate(-50%, -50%);
   }
-  .route-pin:hover{ transform: translateY(-2px); }
+  .route-pin:hover{ transform: translate(-50%, -50%) translateY(-2px); }
   .route-pin.start{
-    bottom: 21%; left: 16%;
+    top: 68%; left: 36%;
     flex-direction:column; align-items:center; gap:3px;
     border-radius:20px; padding: 10px 20px 12px;
   }
-  .route-pin.end{ top: 6%; right: 5%; }
+  .route-pin.end{ top: 13%; left: 52.3%; }
   .route-pin-label{
     font-size:0.6rem;
     letter-spacing:0.14em;
@@ -500,7 +501,7 @@
   }
   .route-cta{
     position:absolute;
-    bottom: 8%; left: 15%;
+    top: 80%; left: 36%;
     display:inline-flex;
     align-items:center;
     gap:6px;
@@ -514,8 +515,9 @@
     text-decoration:none;
     box-shadow: 0 10px 24px -10px rgba(15,30,34,0.5);
     transition: transform .15s ease;
+    transform: translate(-50%, 0);
   }
-  .route-cta:hover{ transform: translateY(-2px); }
+  .route-cta:hover{ transform: translate(-50%, 0) translateY(-2px); }
   .route-cta-arrow{ font-size:0.85rem; }
   @media (max-width: 560px){
     .route-pin{ font-size:0.7rem; padding:7px 12px; }
@@ -942,7 +944,7 @@
     <div class="route-map">
       <img src="images/route-map.jpg" alt="Orilla tranquila de La Barrosa, olas suaves rompiendo sobre la arena">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M16,80 C30,70 38,55 50,46 C64,36 76,20 90,8" stroke="#fff" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" fill="none" stroke-dasharray="5 8" pathLength="100">
+        <path d="M36,68 C36.5,60 37,58 37,55 C38,48 39,45 40,42 C42,36 43,32 44,28 C46,23 47,20 48,18 C50,16 51,14 52.3,13" stroke="#fff" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linecap="round" fill="none" stroke-dasharray="5 8" pathLength="100">
           <animate attributeName="stroke-dashoffset" values="0;-130" dur="4s" repeatCount="indefinite" />
         </path>
       </svg>
