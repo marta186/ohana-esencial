@@ -426,10 +426,30 @@
     text-transform:uppercase;
     color: var(--accent-strong);
   }
+  .route-cta{
+    position:absolute;
+    bottom: 8%; left: 15%;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:"Space Mono", monospace;
+    font-size:0.68rem;
+    font-weight:700;
+    color: var(--tinta);
+    background: var(--espuma);
+    padding: 7px 14px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow: 0 10px 24px -10px rgba(15,30,34,0.5);
+    transition: transform .15s ease;
+  }
+  .route-cta:hover{ transform: translateY(-2px); }
+  .route-cta-arrow{ font-size:0.85rem; }
   @media (max-width: 560px){
     .route-pin{ font-size:0.7rem; padding:7px 12px; }
     .route-pin.start{ padding: 8px 16px 10px; }
     .route-pin-label{ font-size:0.56rem; }
+    .route-cta{ font-size:0.6rem; padding:6px 11px; }
   }
 
   /* ---------- Photo band ---------- */
@@ -815,6 +835,9 @@
         <span class="route-pin-label">Punto de encuentro</span>
         <span>🚩 La Primera Pista</span>
       </a>
+      <a class="route-cta" href="https://maps.app.goo.gl/dKvQUJYCkCMsvEQF7" target="_blank" rel="noopener">
+        <span class="route-cta-arrow">↑</span> Pulsa aquí para ir al punto de encuentro
+      </a>
       <a class="route-pin end" href="https://maps.app.goo.gl/7G2nQKKJ15B64mEL9" target="_blank" rel="noopener">Ohana Beach 🏁</a>
     </div>
   </section>
@@ -846,8 +869,8 @@
         </div>
         <div class="perk">
           <span class="glyph">🏄</span>
-          <span class="title">Regalo de Esencia Surf</span>
-          <span class="desc">Un detalle de la escuela para agradecer tu mañana.</span>
+          <span class="title">Regalos de Esencia Surf</span>
+          <span class="desc">Habrá sorteo de regalos por parte de la marca.</span>
         </div>
       </div>
     </div>
