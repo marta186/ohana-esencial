@@ -222,12 +222,49 @@
     margin-top: 22px;
     letter-spacing: 0.01em;
   }
+  .hero-title{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+  }
   .hero-title-logo{
+    display:inline-block;
     height: 1.55em;
-    width: auto;
-    vertical-align: -0.3em;
+    width: calc(1.55em * 1200 / 570);
     margin-right: 0.04em;
-    filter: brightness(0) invert(1);
+    background-color: var(--text-on-deep);
+    -webkit-mask-image: url("images/ohana-mark-solo.png");
+    mask-image: url("images/ohana-mark-solo.png");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: left center;
+    mask-position: left center;
+    animation: logo-bob 3.4s ease-in-out infinite;
+    animation-delay: .9s;
+  }
+  .hero-title-text{ color: var(--text-on-deep); }
+  @keyframes logo-bob{
+    0%, 100%{ transform: translateY(0) rotate(0deg); }
+    50%{ transform: translateY(-6px) rotate(-1.5deg); }
+  }
+  .hero .brand-lockup,
+  .hero-credit,
+  .hero-title,
+  .hero .tagline,
+  .hero-cta-row{
+    opacity:0;
+    animation: hero-in .7s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  .hero .brand-lockup{ animation-delay: .05s; }
+  .hero-credit{ animation-delay: .15s; }
+  .hero-title{ animation-delay: .25s; }
+  .hero .tagline{ animation-delay: .45s; }
+  .hero-cta-row{ animation-delay: .6s; }
+  @keyframes hero-in{
+    from{ opacity:0; transform: translateY(16px); }
+    to{ opacity:1; transform: translateY(0); }
   }
   .hero .tagline{
     font-family: "Alte Haas Grotesk", ui-sans-serif, system-ui, sans-serif;
@@ -273,8 +310,26 @@
     outline: 3px solid var(--accent-strong);
     outline-offset: 3px;
   }
-  .btn-arrow{ transition: transform .18s ease; }
+  .btn-arrow{ display:inline-block; transition: transform .18s ease; }
   .btn:hover .btn-arrow{ transform: translateX(3px); }
+  .hero-cta-row .btn{
+    opacity: 1;
+    animation: btn-pulse 2.6s ease-in-out infinite;
+    animation-delay: 1.6s;
+  }
+  .hero-cta-row .btn:hover{ animation-play-state: paused; }
+  .hero-cta-row .btn .btn-arrow{
+    animation: arrow-nudge 1.6s ease-in-out infinite;
+    animation-delay: 1.6s;
+  }
+  @keyframes btn-pulse{
+    0%, 100%{ box-shadow: 0 8px 24px -8px rgba(84,173,181,0.55), 0 0 0 0 rgba(84,173,181,0.45); }
+    50%{ box-shadow: 0 8px 24px -8px rgba(84,173,181,0.55), 0 0 0 9px rgba(84,173,181,0); }
+  }
+  @keyframes arrow-nudge{
+    0%, 100%{ transform: translateX(0); }
+    50%{ transform: translateX(4px); }
+  }
   .hero-note{
     font-family:"Space Mono", monospace;
     font-size: 0.82rem;
@@ -764,6 +819,21 @@
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .btn, .btn-arrow{ transition:none; }
+    .hero .brand-lockup,
+    .hero-credit,
+    .hero-title,
+    .hero .tagline,
+    .hero-cta-row,
+    .hero-title-logo,
+    .hero-cta-row .btn,
+    .hero-cta-row .btn .btn-arrow{
+      animation:none;
+      opacity:1;
+      transform:none;
+    }
+    .hero-cta-row .btn{
+      box-shadow: 0 8px 24px -8px rgba(84,173,181,0.55);
+    }
   }
 </style>
 
@@ -778,7 +848,7 @@
           <a href="https://www.instagram.com/esencia_surf/" target="_blank" rel="noopener"><img src="images/esencia-mark.png" alt="Esencia Surf School"></a>
         </div>
         <a class="credit hero-credit" href="https://www.instagram.com/vitinistudio/" target="_blank" rel="noopener">Campaña dirigida por Vitini Studio</a>
-        <h1><img class="hero-title-logo" src="images/ohana-mark-solo.png" alt="Ohana"> Esencial</h1>
+        <h1 class="hero-title"><span class="hero-title-logo" role="img" aria-label="Ohana"></span><span class="hero-title-text">Esencial</span></h1>
         <p class="tagline">Una mañana por nuestra playa. Por la de siempre.</p>
         <div class="hero-cta-row">
           <a class="btn" href="#apuntate">
