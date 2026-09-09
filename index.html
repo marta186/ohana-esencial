@@ -404,13 +404,13 @@
     box-shadow: 0 10px 24px -10px rgba(15,30,34,0.5);
     transition: transform .15s ease;
   }
-  .route-pin:hover{ transform: translateX(-50%) translateY(-2px); }
+  .route-pin:hover{ transform: translateY(-2px); }
   .route-pin.start{
-    top: 6%; left: 50%; transform: translateX(-50%);
+    bottom: 6%; left: 5%;
     flex-direction:column; align-items:center; gap:3px;
     border-radius:20px; padding: 10px 20px 12px;
   }
-  .route-pin.end{ bottom: 6%; left: 50%; transform: translateX(-50%); }
+  .route-pin.end{ top: 6%; right: 5%; }
   .route-pin-label{
     font-size:0.6rem;
     letter-spacing:0.14em;
@@ -798,12 +798,12 @@
     <div class="route-map">
       <img src="images/route-map.jpg" alt="Orilla tranquila de La Barrosa, olas suaves rompiendo sobre la arena">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M50,8 C30,25 68,40 50,55 C34,68 66,80 50,94" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" vector-effect="non-scaling-stroke" stroke-dasharray="0.5 5" stroke-linecap="round" fill="none"/>
-        <path d="M50,8 C30,25 68,40 50,55 C34,68 66,80 50,94" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linecap="round" fill="none" stroke-dasharray="1 999" pathLength="100">
+        <path d="M12,88 C40,78 22,55 50,50 C78,45 60,22 88,12" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" vector-effect="non-scaling-stroke" stroke-dasharray="0.5 5" stroke-linecap="round" fill="none"/>
+        <path d="M12,88 C40,78 22,55 50,50 C78,45 60,22 88,12" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linecap="round" fill="none" stroke-dasharray="1 999" pathLength="100">
           <animate attributeName="stroke-dasharray" values="0 100;100 100" dur="2.4s" fill="freeze" />
         </path>
-        <circle cx="50" cy="8" r="1.6" fill="#fff" vector-effect="non-scaling-stroke"/>
-        <circle cx="50" cy="94" r="1.6" fill="var(--accent)" vector-effect="non-scaling-stroke"/>
+        <circle cx="12" cy="88" r="1.6" fill="#fff" vector-effect="non-scaling-stroke"/>
+        <circle cx="88" cy="12" r="1.6" fill="var(--accent)" vector-effect="non-scaling-stroke"/>
       </svg>
       <a class="route-pin start" href="https://maps.app.goo.gl/dKvQUJYCkCMsvEQF7" target="_blank" rel="noopener">
         <span class="route-pin-label">Punto de encuentro</span>
